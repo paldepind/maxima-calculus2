@@ -7,7 +7,7 @@ Maxima funktioner til løsning af eksamensopgaver i kurset Calculus 2 på Aarhus
 Indlæs filen `main.mac` i Maxima med følgende kommando.
 
 ```
-batch("main.mac");
+batchload("main.mac");
 ```
 
 Afprøv at det virker:
