@@ -1,13 +1,14 @@
+printHeader(s) := print("-----", s, "-----");
 
 vecLen(v):=(
   sqrt(v . v)
-  )$
+  );
 
-projection(v, u):=(
+projection(v, u) := (
   (u . v) / (u . u)
-  )$
+  );
 
-twoVectors(v, u):=(
+twoVectors(v, u) := (
   dotProduct: v . u,
   lenV: vecLen(v),
   lenU: vecLen(u),
@@ -20,9 +21,9 @@ twoVectors(v, u):=(
   print("v projekteret på u: ", projection(v, u), " * u"),
   print("u projekteret på v: ", projection(u, v), " * v"),
   print("korteste afstand fra u til v: ", projLen)
-  )$
+  );
 
-exprD(fxx, fyy, fxy):=(
+exprD(fxx, fyy, fxy) := (
   fxx * fyy - fxy^2
   );
 
@@ -33,8 +34,8 @@ secDerTest(d, fxxab) := (
   else "n/a"
   );
 
-criticalPoints(f):=(
-  print("Viser information for"),
+criticalPoints(f) := (
+  printHeader("Viser information for"),
   print("f(x,y) = ", f),
   fx: diff(f, x),
   fxx: diff(fx, x),
@@ -44,15 +45,14 @@ criticalPoints(f):=(
   fyy: diff(fy, y),
   critPs: solve([fx, fy], [x, y]),
   d: exprD(fxx, fyy, fxy),
-  print("--- Afledte funktioner ---"),
+  printHeader("Afledte funktioner"),
   print("f_x(x,y) =", fx),
   print("f_xx(x,y) =", fxx),
   print("f_xy(x,y) =", fxy),
-  print("f_y(x,y) =", fy),
-  print("f_yy(x,y) =", fyy),
+  print("f_y(x,y) =", fy),  print("f_yy(x,y) =", fyy),
   print("f_yx(x,y) =", fyx),
-  print("udtryk for D:", d),
-  print("--- Kritiske punkter ---"),
+  print("Udtryk for D:", d),
+  printHeader("Kritiske punkter"),
   print("antal kritiske punkter:", length(critPs)),
   for critP in critPs do (
     a: critP[1],
@@ -64,4 +64,23 @@ criticalPoints(f):=(
     print("D:", curD),
     print("punktet er et", secDerTest(curD, ev(fxx, critP[1], critP[2])))
     )
-  )$
+  );
+
+maclaurin(f, y) := (
+  printHeader("Viser information for"),
+  print("f(x) = ", f),
+  printHeader("De afledte er"),
+  for i: 0 thru 10 do (
+    ff: diff(f, x, i),
+    print("f^(", i, ") =", ff),
+    print("f^(", i, ")(0) =", ev(ff, x=0))
+    ),
+  printHeader("Maclaurin raekken for f(x) er"),
+  print(taylor(f, x, 0, 18)),
+  printHeader("Maclaurin raekken for f'(x) er"),
+  print(taylor(diff(f, x), x, 0, 18)),
+  intF: integrate(f, x),
+  constant: y - ev(intF, x=0),
+  printHeader("Maclaurin raekken for F(x) er"),
+  print(taylor(intF + constant, x, 0, 18))
+  );
