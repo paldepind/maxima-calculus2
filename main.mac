@@ -4,7 +4,7 @@ vecLen(v):=(
   )$
 
 projection(v, u):=(
-  u . v / u . u
+  (u . v) / (u . u)
   )$
 
 twoVectors(v, u):=(
@@ -22,17 +22,11 @@ twoVectors(v, u):=(
   print("korteste afstand fra u til v: ", projLen)
   )$
 
-/*
-Til opgave af formen: Gennemfør en undersøgelse af kritiske punkter
-og en bestemmelse af arten af disse ved anden- ordenskriteriet
-(“second derivatives test”).
-*/
-
 exprD(fxx, fyy, fxy):=(
   fxx * fyy - fxy^2
   );
 
-secDerTest(d, fxxab) := block([],
+secDerTest(d, fxxab) := (
   if d > 0 and fxxab > 0 then "lokalt minimum"
   else if d > 0 and fxxab < 0 then "lokalt maksimum"
   else if d < 0 then "saddelpunkt"
