@@ -22,6 +22,21 @@ Du skulle nu se output i stil med følgende:
 
 ## Funktioner
 
+### `gradient`
+
+Til løsning af opgavetyper med teksten
+
+> Der beregnes gradient og retningsafledede.
+
+`gradient` skal gives en et udtryk af `x` og `y`, et punkt og en
+retning i form af en enhedsvektor.
+
+```
+gradient(x^4 + 3*x^3*y^3 + 6*y^2, [-1,2], 1/sqrt(2)*[-1,-1]);
+```
+
+![gradient output](/gradient.png?raw=true)
+
 ### `criticalPoints`
 
 Til løsning af opgavetyper med teksten:

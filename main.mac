@@ -4,6 +4,33 @@ vecLen(v):=(
   sqrt(v . v)
   );
 
+gradient(f, p, vec) := (
+  printHeader("Viser information for"),
+  print("f(x,y) = ", f),
+  fx: diff(f, x),
+  fxx: diff(fx, x),
+  fxy: diff(fx, y),
+  fy: diff(f, y),
+  fyx: diff(fy, x),
+  fyy: diff(fy, y),
+  grad: [fx, fy],
+  gradP: [ev(fx, x = p[1], y = p[2]), ev(fy, x = p[1], y = p[2])],
+  maxDir: gradP / vecLen(gradP),
+  printHeader("Afledte funktioner"),
+  print("f_x(x,y) =", fx),
+  print("f_xx(x,y) =", fxx),
+  print("f_xy(x,y) =", fxy),
+  print("f_y(x,y) =", fy),
+  print("f_yy(x,y) =", fyy),
+  print("f_yx(x,y) =", fyx),
+  printHeader("Gradienten og retningsafledte"),
+  print("Gradienten:", grad),
+  print("Gradienten i punktet", p, "er", gradP),
+  print("Retningsafledede i punktet", p, ":", vec. gradP),
+  print("Den vektor, der giver den stoorste retningsafledede:", maxDir),
+  print("Den stoorste regningsafledede i", p, ":", maxDir . gradP)
+  );
+
 projection(v, u) := (
   (u . v) / (u . u)
   );
@@ -49,7 +76,8 @@ criticalPoints(f) := (
   print("f_x(x,y) =", fx),
   print("f_xx(x,y) =", fxx),
   print("f_xy(x,y) =", fxy),
-  print("f_y(x,y) =", fy),  print("f_yy(x,y) =", fyy),
+  print("f_y(x,y) =", fy),
+  print("f_yy(x,y) =", fyy),
   print("f_yx(x,y) =", fyx),
   print("Udtryk for D:", d),
   printHeader("Kritiske punkter"),
