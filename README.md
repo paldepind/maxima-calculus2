@@ -37,6 +37,17 @@ gradient(x^4 + 3*x^3*y^3 + 6*y^2, [-1,2], 1/sqrt(2)*[-1,-1]);
 
 ![gradient output](/gradient.png?raw=true)
 
+### `gradientAngle`
+
+Tilsvarende `gradient` men for opgaver hvor der stedet for en vektor
+gives en vinkel.
+
+```
+gradientAngle(11*x^3 + 15*y^2, [1,2], 3*%pi/4);
+```
+
+Bemærk at π Maxima skal skrives som `%pi`.
+
 ### `criticalPoints`
 
 Til løsning af opgavetyper med teksten:
@@ -84,4 +95,4 @@ Til løsning af opgavetyper med teksten
 calcMatrix(matrix([1,0,0],[1,9,2],[1,2,9]));
 ```
 
-![calcMatrix output](/calcmatrix.png?raw=true)
+![calcMatrix output](/calcmatrix.png?raw=true)k

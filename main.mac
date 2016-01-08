@@ -31,6 +31,12 @@ gradient(f, p, vec) := (
   print("Den stoorste regningsafledede i", p, ":", maxDir . gradP)
   );
 
+gradientAngle(f, p, theta) := (
+  vec: [cos(theta), sin(theta)],
+  print("retningsvektoren for vinklen:", vec),
+  gradient(f, p, vec)
+  );
+
 projection(v, u) := (
   (u . v) / (u . u)
   );
