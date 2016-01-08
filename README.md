@@ -28,7 +28,7 @@ Til løsning af opgavetyper med teksten
 
 > Der beregnes gradient og retningsafledede.
 
-`gradient` skal gives en et udtryk af `x` og `y`, et punkt og en
+`gradient` skal gives et udtryk af `x` og `y`, et punkt og en
 retning i form af en enhedsvektor.
 
 ```
@@ -36,6 +36,17 @@ gradient(x^4 + 3*x^3*y^3 + 6*y^2, [-1,2], 1/sqrt(2)*[-1,-1]);
 ```
 
 ![gradient output](/gradient.png?raw=true)
+
+### `gradientAngle`
+
+Tilsvarende `gradient` men for opgaver hvor der stedet for en vektor
+gives en vinkel.
+
+```
+gradientAngle(11*x^3 + 15*y^2, [1,2], 3*%pi/4);
+```
+
+Bemærk at π i Maxima skal skrives som `%pi`.
 
 ### `criticalPoints`
 
@@ -53,13 +64,24 @@ criticalPoints(y^2 + 6*x*y + 6*x^2 - 28*y - 66*x + 200);
 
 ## `twoVectors`
 
-Til løsning af opgavetyper hvor to vektorer er givet og hvor teksten
+Til løsning af opgavetyper hvor _to_ vektorer er givet og hvor teksten
 er:
 
 > Afstande og projektioner ønskes beregnet.
 
 ```
 twoVectors([0,1,1],[1,2,3]);
+```
+
+## `threeVectors`
+
+Til løsning af opgavetyper hvor _tre_ vektorer er givet og hvor teksten
+er:
+
+> Afstande og projektioner ønskes beregnet.
+
+```
+threeVectors([1,-1,1],[2,3,1],[3,3,2]);
 ```
 
 ## `maclaurin`
