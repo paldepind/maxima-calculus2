@@ -1,7 +1,11 @@
 printHeader(s) := print("-----", s, "-----");
 
-vecLen(v):=(
+vecLen(v) := (
   sqrt(v . v)
+  );
+
+normVec(v) := (
+  v / vecLen(v)
   );
 
 gradient(f, p, vec) := (
@@ -51,9 +55,30 @@ twoVectors(v, u) := (
   print("|u| = ", lenU),
   print("afstand mellem v og u: ", dist),
   print("skalar produkt: v . u = ", dotProduct),
-  print("v projekteret på u: ", projection(v, u), " * u"),
-  print("u projekteret på v: ", projection(u, v), " * v"),
+  print("v projekteret paa u: ", projection(v, u), " * u"),
+  print("u projekteret paa v: ", projection(u, v), " * v"),
   print("korteste afstand fra u til v: ", projLen)
+  );
+
+threeVectors(u1, u2, x) := (
+  lenU1: vecLen(u1),
+  lenU2: vecLen(u2),
+  nU1: normVec(u1),
+  nU2: normVec(u2),
+  lenX: vecLen(x),
+  printHeader("Laengder"),
+  print("|u1| = ", lenU1),
+  print("|u2| = ", lenU2),
+  print("|x| = ", lenX),
+  print("skalar produkt: x . u1 = ", x . u1),
+  print("skalar produkt: x . u2 = ", x . u2),
+  print("afstand fra x til u1", vecLen(x - u1)),
+  print("afstand fra x til u2", vecLen(x - u2)),
+  print("x projekteret paa u1: ", projection(x, u1), " * u1"),
+  print("x projekteret paa u2: ", projection(x, u2), " * u2"),
+  if u1 . u2 = 0
+    then print("x projekteret paa rummet udspaendt af u1 og u2:", (x . nU1) * nU1 + (x . nU2) * nU2)
+    else print("u1 og u2 er ikke ortogonale")
   );
 
 exprD(fxx, fyy, fxy) := (

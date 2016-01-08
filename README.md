@@ -64,13 +64,24 @@ criticalPoints(y^2 + 6*x*y + 6*x^2 - 28*y - 66*x + 200);
 
 ## `twoVectors`
 
-Til løsning af opgavetyper hvor to vektorer er givet og hvor teksten
+Til løsning af opgavetyper hvor _to_ vektorer er givet og hvor teksten
 er:
 
 > Afstande og projektioner ønskes beregnet.
 
 ```
 twoVectors([0,1,1],[1,2,3]);
+```
+
+## `threeVectors`
+
+Til løsning af opgavetyper hvor _tre_ vektorer er givet og hvor teksten
+er:
+
+> Afstande og projektioner ønskes beregnet.
+
+```
+threeVectors([1,-1,1],[2,3,1],[3,3,2]);
 ```
 
 ## `maclaurin`
