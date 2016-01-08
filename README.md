@@ -28,7 +28,7 @@ Til løsning af opgavetyper med teksten
 
 > Der beregnes gradient og retningsafledede.
 
-`gradient` skal gives en et udtryk af `x` og `y`, et punkt og en
+`gradient` skal gives et udtryk af `x` og `y`, et punkt og en
 retning i form af en enhedsvektor.
 
 ```
@@ -46,7 +46,7 @@ gives en vinkel.
 gradientAngle(11*x^3 + 15*y^2, [1,2], 3*%pi/4);
 ```
 
-Bemærk at π Maxima skal skrives som `%pi`.
+Bemærk at π i Maxima skal skrives som `%pi`.
 
 ### `criticalPoints`
 
@@ -95,4 +95,4 @@ Til løsning af opgavetyper med teksten
 calcMatrix(matrix([1,0,0],[1,9,2],[1,2,9]));
 ```
 
-![calcMatrix output](/calcmatrix.png?raw=true)k
+![calcMatrix output](/calcmatrix.png?raw=true)
