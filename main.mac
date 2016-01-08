@@ -4,6 +4,15 @@ vecLen(v):=(
   sqrt(v . v)
   );
 
+unitVecRad(a):= (
+  x: cos(a),
+  y: sin(a),
+  fac: factor(x,y),
+  printHeader("Beregner enhedsvektor fra radianer"),
+  print("Faktoriseret: ", fac,[x/fac,y/fac],""),
+  print("Foruden:", [x,y])
+  );
+
 gradient(f, p, vec) := (
   printHeader("Viser information for"),
   print("f(x,y) = ", f),
@@ -131,3 +140,6 @@ calcMatrix(a) := (
     print(vecs[2][i])
     )
   );
+
+
+

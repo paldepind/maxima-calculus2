@@ -74,7 +74,7 @@ Udover funktionen `f(x)` skal `maclaurin` også gives værdien for `F(0)`.
 maclaurin(x^2 * sin(x), 9);
 ```
 
-## `calMatrix`
+## `calcMatrix`
 
 Til løsning af opgavetyper med teksten
 
@@ -85,3 +85,11 @@ calcMatrix(matrix([1,0,0],[1,9,2],[1,2,9]));
 ```
 
 ![calcMatrix output](/calcmatrix.png?raw=true)
+
+## 'unitVecRad'
+
+Beregning af enhedsvektor udfra radianer
+
+``` 
+unitVecRad(%pi/3)
+```
