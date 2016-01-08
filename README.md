@@ -73,3 +73,15 @@ Udover funktionen `f(x)` skal `maclaurin` også gives værdien for `F(0)`.
 ```
 maclaurin(x^2 * sin(x), 9);
 ```
+
+## `calMatrix`
+
+Til løsning af opgavetyper med teksten
+
+> Der ønskes en redegørelse for egenværdier og egenvektorer.
+
+```
+calcMatrix(matrix([1,0,0],[1,9,2],[1,2,9]));
+```
+
+![calcMatrix output](/calcmatrix.png?raw=true)

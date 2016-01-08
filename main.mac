@@ -112,3 +112,22 @@ maclaurin(f, y) := (
   printHeader("Maclaurin raekken for F(x) er"),
   print(taylor(intF + constant, x, 0, 18))
   );
+
+calcMatrix(a) := (
+  printHeader("Viser information for"),
+  print(a),
+  printHeader("Det karakteristisk polynomie"),
+  ch: charpoly(a, l),
+  /* print char poly in several forms */
+  print(expand(ch), "=", factor(ch), "=", ch),
+  printHeader("Egenvaerdier og egenvektorer"),
+  vecs: eigenvectors(a),
+  eigvals: vecs[1][1],
+  print("antal egenvaerdier:", length(eigvals)),
+  for i: 1 thru length(eigvals) do (
+    print("Egenvaerdi"),
+    print(vecs[1][1][i]),
+    print("Egenvektorer"),
+    print(vecs[2][i])
+    )
+  );
