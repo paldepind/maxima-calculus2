@@ -4,6 +4,16 @@ vecLen(v) := (
   sqrt(v . v)
   );
 
+
+unitVecRad(a):= (
+  x: cos(a),
+  y: sin(a),
+  fac: factor(x,y),
+  printHeader("Beregner enhedsvektor fra radianer"),
+  print("Faktoriseret: ", fac,[x/fac,y/fac],""),
+  print("Foruden:", [x,y])
+  );
+
 normVec(v) := (
   v / vecLen(v)
   );
@@ -162,3 +172,6 @@ calcMatrix(a) := (
     print(vecs[2][i])
     )
   );
+
+
+
