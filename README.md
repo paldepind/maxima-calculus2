@@ -4,6 +4,8 @@ Maxima funktioner til løsning af eksamensopgaver i kurset Calculus 2 på Aarhus
 
 ## Introduktion
 
+### Maxima i CLI eller Emacs
+
 Indlæs filen `main.mac` i Maxima med følgende kommando.
 
 ```
@@ -13,12 +15,27 @@ batchload("main.mac");
 Afprøv at det virker:
 
 ```
-criticalPoints(y^2 + 6*x*y + 6*x^2 - 28*y - 66*x + 200)
+criticalPoints(y^2 + 6*x*y + 6*x^2 - 28*y - 66*x + 200);
 ```
 
 Du skulle nu se output i stil med følgende:
 
 ![criticalPoints output](/criticalpoints.png?raw=true)
+
+### wxMaxima
+
+Indlæs programmet i wxMaxima ved at vælge `File -> Load Package...`,
+find `main.mac` filen og indlæs den.
+
+Afprøv at det virker ved at indtaste
+
+```
+criticalPoints(y^2 + 6*x*y + 6*x^2 - 28*y - 66*x + 200);
+```
+
+og tryk `Shift-Enter`. Du skulle nu se følgende output:
+
+![criticalPoints output](/wxcriticalpoints.png?raw=true)
 
 ## Funktioner
 
@@ -108,7 +125,7 @@ calcMatrix(matrix([1,0,0],[1,9,2],[1,2,9]));
 
 ![calcMatrix output](/calcmatrix.png?raw=true)
 
-## 'unitVecRad'
+## `unitVecRad`
 
 Beregning af enhedsvektor udfra radianer
 
