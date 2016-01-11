@@ -124,10 +124,11 @@ Til løsning af opgavetyper med teksten
 
 > Maclaurinrækker i relation til denne funktion beregnes.
 
-Udover funktionen `f(x)` skal `maclaurin` også gives værdien for `F(0)`.
+Udover funktionen `f(x)` skal `maclaurin` også gives den `n` for
+hvilken `f^(n)(0)` skal findes og værdien for `F(0)`.
 
 ```
-maclaurin(x^2 * sin(x), 9);
+maclaurin(x^2 * sin(x), 7, 9);
 ```
 
 ## `calcMatrix`

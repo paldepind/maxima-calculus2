@@ -135,17 +135,18 @@ criticalPoints(f) := (
     )
   );
 
-maclaurin(f, y) := (
+maclaurin(f, n, y) := (
   printHeader("Viser information for"),
+  series: taylor(f, x, 0, 18),
   print("f(x) = ", f),
+  print("f^(", n, ")(0) =", coeff(series, x, n)*n!),
   printHeader("De afledte er"),
   for i: 0 thru 10 do (
     ff: diff(f, x, i),
-    print("f^(", i, ") =", ff),
-    print("f^(", i, ")(0) =", ev(ff, x=0))
+    print("f^(", i, ") =", ff)
     ),
   printHeader("Maclaurin raekken for f(x) er"),
-  print(taylor(f, x, 0, 18)),
+  print(series),
   printHeader("Maclaurin raekken for f'(x) er"),
   print(taylor(diff(f, x), x, 0, 18)),
   intF: integrate(f, x),
