@@ -65,6 +65,23 @@ gradientAngle(11*x^3 + 15*y^2, [1,2], 3*%pi/4);
 
 Bemærk at π i Maxima skal skrives som `%pi`.
 
+### `areaVol`
+
+Til løsning af opgavetyper med teksten:
+
+> Areal eller rumfang af delmængder i planen eller rummet ønskes beregnet.
+
+Og lignende opgaver hvor et dobbeltintegrale skal findes og beregnes.
+
+Funktionen skal gives nedre og øvre grænse for `x`, nedre og øvre
+grænse for `y` samt nedre og øvre grænse for `z`.
+
+![areaVol question](/areavolquestion.png?raw=true)
+
+```
+areaVol(0, 1, x^3, x^2, y, 2*y+x);
+```
+
 ### `criticalPoints`
 
 Til løsning af opgavetyper med teksten:

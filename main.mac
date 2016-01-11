@@ -128,7 +128,6 @@ criticalPoints(f) := (
     b: critP[2],
     curD: ev(d, a, b),
     print("Kritisk punkt:", critP),
-    print(f),
     print("hvis vaerdi er:", ev(f, a, b)),
     print("D:", curD),
     print("punktet er et", secDerTest(curD, ev(fxx, critP[1], critP[2])))
@@ -171,6 +170,20 @@ calcMatrix(a) := (
     print("Egenvektorer"),
     print(vecs[2][i])
     )
+  );
+
+areaVol(lx, gx, ly, gy, lz, gz) := (
+  areaEq: 'integrate(gy - ly, x, lx, gx),
+  area: integrate(gy - ly, x, lx, gx),
+  volumeEq: 'integrate('integrate(gz - lz, y, ly, gy), x, lx, gx),
+  volume: integrate(integrate(gz - lz, y, ly, gy), x, lx, gx),
+  printHeader("Areal"),
+  print("D1 = { (x,y) |", lx, "<= x <=", gx, ",", ly, "<= y <=", gy, "}"),
+  print(A(D1) = areaEq, "=", area),
+  plot2d([ly, gy], [x, lx, gx]),
+  printHeader("Volume"),
+  print("D2 = { (x,y,z) |", lx, "<= x <=", gx, ",", ly, "<= y <=", gy, ",", lz, "<= z <=", gz, "}"),
+  print(V(D2) = volumeEq, "=", volume)
   );
 
 
