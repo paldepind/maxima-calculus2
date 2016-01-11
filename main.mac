@@ -1,4 +1,5 @@
 printHeader(s) := print("-----", s, "-----");
+printLine() := print("-----------------------------");
 
 vecLen(v) := (
   sqrt(v . v)
@@ -168,8 +169,10 @@ calcMatrix(a) := (
     print("Egenvaerdi"),
     print(vecs[1][1][i]),
     print("Egenvektorer"),
-    print(vecs[2][i])
-    )
+    print(vecs[2][i]),
+    print("Egenrummet"),
+    print(nullspace(a-vecs[1][1][i]*identfor(a))),
+    printLine())
   );
 
 areaVol(lx, gx, ly, gy, lz, gz) := (
@@ -185,6 +188,4 @@ areaVol(lx, gx, ly, gy, lz, gz) := (
   print("D2 = { (x,y,z) |", lx, "<= x <=", gx, ",", ly, "<= y <=", gy, ",", lz, "<= z <=", gz, "}"),
   print(V(D2) = volumeEq, "=", volume)
   );
-
-
 
